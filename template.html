@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sorteador</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="ey-header">
+    <span class="ey-title">Sorteador de personas</span>
+    <button id="toggleTheme" class="btn btn-outline small" aria-pressed="false" aria-label="Cambiar modo de color">Modo oscuro</button>
+  </header>
+
+  <section class="card" role="region" aria-labelledby="titulo-card">
+    <div class="card-head">
+      <span class="accent-bar" aria-hidden="true"></span>
+      <h2 id="titulo-card" class="h2">Lista cargada (editable)</h2>
+    </div>
+    <div class="card-body">
+      <label for="nombres">Pega o edita los nombres (uno por línea)</label>
+      <textarea id="nombres" placeholder="Pega aquí los nombres...">{{NAMES}}</textarea>
+
+      <div class="actions">
+        <label for="cantidad">Cantidad a seleccionar:</label>
+        <input id="cantidad" type="number" min="1" value="2" aria-label="Cantidad a seleccionar"/>
+
+        <button class="btn btn-primary" id="btn">Sortear</button>
+        <button class="btn btn-outline" id="btnGuardar">Guardar resultado (.txt)</button>
+      </div>
+
+      <p class="help">Tip: puedes editar la lista antes de sortear. El sorteo es aleatorio con Fisher–Yates.</p>
+
+      <div id="resultado" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <div class="footer">
+    Hecho con ❤️ usando la misma lógica compartida para CLI y Web.
+  </div>
+
+  <!-- Lógica compartida -->
+  <script src="selector.js"></script>
+  <!-- App web -->
+  <script src="app.js"></script>
+</body>
+</html>

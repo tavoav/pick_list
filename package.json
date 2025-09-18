@@ -1,0 +1,27 @@
+{
+  "name": "sorteador",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "sorteador": "index.js"
+  },
+  "pkg": {
+    "assets": [
+      "lista.txt",
+      "selector.js"
+    ]
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build-html": "node build-html.js",
+    "build-exe-win": "pkg . --targets node*-win-x64 --output dist/sorteador.exe",
+    "build-exe-linux": "pkg . --targets node22-linux-x64 --output dist/sorteador",
+    "build-exe-mac": "pkg . --targets node22-macos-x64 --output dist/sorteador"
+  },
+  "devDependencies": {},
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
